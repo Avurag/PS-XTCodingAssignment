@@ -1,0 +1,119 @@
+<router-outlet>
+    <section class="">
+        <div class="container col-md-12">
+            <h3>SpaceX Launch Programs</h3>
+            <div class="filter_section col-md-4">
+
+                <ul class="text-center">
+                    <h2
+                        style="margin-top: 9px;color: #005dff;text-transform: uppercase;font-weight: 600;font-family: arial;font-size: 15px;margin-left: 12px;">
+                        Filters
+                    </h2>
+                    <h5>Launch Year</h5>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2006' }" queryParamsHandling="merge">2006</button>
+
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2007</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2008</button>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2009</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2010</button>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2011</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2012</button>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2013</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2014</button>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2015</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2016</button>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2017</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2018</button>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2019</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="search-submit" [routerLink]="[]"
+                            [queryParams]="{ launch_year: '2007' }" queryParamsHandling="merge">2020</button>
+                    </li>
+
+                </ul>
+                <ul class="text-center">
+                    <h5>Successful Launch</h5>
+
+                    <button type="submit" class="search-submit" [routerLink]="[]"
+                        [queryParams]="{ launch_success: 'true' }" queryParamsHandling="merge">True</button>
+                    <button type="submit" class="search-submit" [routerLink]="[]"
+                        [queryParams]="{ launch_success: 'false' }" queryParamsHandling="merge">False</button>
+                </ul>
+                <ul class="text-center">
+                    <h5>Successful Landing</h5>
+
+                    <button type="submit" class="search-submit" [routerLink]="[]"
+                        [queryParams]="{ land_success: 'true' }" queryParamsHandling="merge">True</button>
+                    <button type="submit" class="search-submit" [routerLink]="[]"
+                        [queryParams]="{ land_success: 'false' }" queryParamsHandling="merge">False</button>
+                </ul>
+            </div>
+            <div class="program_section col-md-8">
+                <div class="content-area1">
+                    <!-------------------  Grid Column --------------------------->
+                    <div class="program_grid" *ngFor="let program of programs">
+                        <div class="program_img"><img src="{{program?.links?.mission_patch}}">
+                        </div>
+                        <div class="program_title">
+                            {{program?.mission_name}} #{{program?.flight_number}}
+                        </div>
+                        <div class="program_data">
+
+                            <h5>Mission Ids:</h5>{{program?.mission_id}}
+
+                        </div>
+                        <div class="program_data">
+
+                            <h5>Launch Year:</h5>{{program?.launch_year}}
+
+                        </div>
+                        <div class="program_data">
+
+                            <h5>Successful Launch:</h5>{{program?.launch_success}}
+
+                        </div>
+                        <div class="program_data">
+
+                            <h5>Successful Landing:</h5>{{program?.launch_success}}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-12 fixed">
+            <h5 style="text-align: center;">Developed By: Anurag Pathania</h5>
+        </div>
+    </section>
+
+</router-outlet>

@@ -69,9 +69,9 @@ export class SpacexprogramComponent implements OnInit {
       this.launch_year = queryParams.launch_year;
       this.launch_success = queryParams.launch_success;
       this.land_success = queryParams.land_success;
-      console.log('Filters land success value', this.land_success);
-      console.log('Filters launch success value', this.launch_success);
-      console.log('Filters launch year value', this.launch_year);
+      // console.log('Filters land success value', this.land_success);
+      // console.log('Filters launch success value', this.launch_success);
+      // console.log('Filters launch year value', this.launch_year);
       if (this.launch_success != null && this.launch_year == null && this.land_success == null) {
         this.getLaunchSuccess(this.launch_success);
       }
@@ -89,23 +89,23 @@ export class SpacexprogramComponent implements OnInit {
     this.spacexservice.getAllSpaceXProgram().subscribe(res => {
       if (res) {
         this.programs = res;
-        console.log('All Programs', this.programs);
+        // console.log('All Programs', this.programs);
       }
     }, error => {
-      console.log('error', error);
+      // console.log('error', error);
     })
   }
 
   getLaunchSuccess(launch_success) {
-    console.log('launch_success on api', launch_success);
+    // console.log('launch_success on api', launch_success);
     if (launch_success != null) {
       this.spacexservice.getLaunchSuccess(launch_success).subscribe(res => {
         if (res) {
           this.programs = res;
-          console.log('Launch Success', this.programs);
+          //     console.log('Launch Success', this.programs);
         }
       }, error => {
-        console.log('error', error);
+        //    console.log('error', error);
       })
     }
     else {
@@ -113,29 +113,28 @@ export class SpacexprogramComponent implements OnInit {
     }
   }
   getLaunchLand(launch_success, land_success) {
-    console.log('getLaunchLand on function', launch_success, land_success);
+    //  console.log('getLaunchLand on function', launch_success, land_success);
     this.spacexservice.getLaunchLand(launch_success, land_success).subscribe(res => {
       if (res) {
         this.programs = res;
-        console.log('Launch Success', this.programs);
+        //   console.log('Launch Success', this.programs);
       }
     }, error => {
-      console.log('error', error);
+      //  console.log('error', error);
     })
   }
 
   getAllLaunchLandYear(launch_year, launch_success, land_success) {
-    console.log('getAllLaunchLandYear on function', launch_year, launch_success, land_success);
-    // console.log('launch_success', launch_success);
-    // console.log('land_success', land_success);
+    //  console.log('getAllLaunchLandYear on function', launch_year, launch_success, land_success);
+
 
     this.spacexservice.getAllLaunchLandYear(launch_success, land_success, launch_year).subscribe(res => {
       if (res) {
         this.programs = res;
-        console.log('Launch Land Year', this.programs);
+        // console.log('Launch Land Year', this.programs);
       }
     }, error => {
-      console.log('error', error);
+      //  console.log('error', error);
     })
   }
 }

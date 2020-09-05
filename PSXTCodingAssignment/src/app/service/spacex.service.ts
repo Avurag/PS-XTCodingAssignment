@@ -24,7 +24,7 @@ export class SpaceXService {
     }
     //Filters
     getLaunchSuccess(launch_success): Observable<ResultModel> {
-        console.log('launch_success on service', launch_success);
+        //console.log('launch_success on service', launch_success);
         return this.apiService.get(`https://api.spaceXdata.com/v3/launches?limit=100&launch_success=${launch_success}`)
             .pipe(map(
                 data => {
@@ -34,7 +34,7 @@ export class SpaceXService {
             ));
     }
     getLaunchLand(launch_success, land_success): Observable<ResultModel> {
-        console.log('getLaunchLand on service', launch_success, land_success);
+        //   console.log('getLaunchLand on service', launch_success, land_success);
         return this.apiService.get(`https://api.spaceXdata.com/v3/launches?limit=100&launch_success=${launch_success}&land_success=${land_success}`)
             .pipe(map(
                 data => {
@@ -44,7 +44,7 @@ export class SpaceXService {
             ));
     }
     getAllLaunchLandYear(launch_year, launch_success, land_success): Observable<ResultModel> {
-        console.log('getAllLaunchLandYear on service', launch_year, launch_success, land_success);
+        //   console.log('getAllLaunchLandYear on service', launch_year, launch_success, land_success);
         return this.apiService.get(`https://api.spaceXdata.com/v3/launches?limit=100&launch_success=${launch_success}&land_success=${land_success}&launch_year=${launch_year}`)
             .pipe(map(
                 data => {
